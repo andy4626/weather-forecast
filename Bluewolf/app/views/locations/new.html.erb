@@ -1,0 +1,6 @@
+<%= form_tag(user_locations_path, method: "post") do %>
+  <%= label_tag(:address, "Address")%>
+  <%= text_field_tag(:address)%>
+
+  <%= submit_tag("Search Weather")%>
+<% end %>
