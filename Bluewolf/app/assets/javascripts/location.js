@@ -3,6 +3,7 @@
 var GOOGLE_API_KEY= "AIzaSyBygyIwNNt8tWLw5hfdv_izDth1jaq8TnI"
 var location_lat, location_lng
 
+
 $(document).ready(function() {
     var address = document.getElementById("address").innerHTML.replace(/ /g, "+")
 		var coordinates_request = $.ajax({
