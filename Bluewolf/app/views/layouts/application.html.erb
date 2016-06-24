@@ -9,14 +9,15 @@
 <body>
     <nav>
       <ul>
+        <li><%= link_to "Home", root_path, :class => "button"%></li>
         <% if logged_in? %>
         <li><%= link_to "Search Weather", new_user_location_path(current_user), :class => "button"%></li>
+        <li><%= link_to "Search History", user_path(current_user), :class => "button"%></li>
         <li><%= link_to "Logout", logout_path, :class => "button"%></li>
         <%else%>
         <li><%= link_to "Login", login_path, :class => "button login-button" %></li>
         <li><%= link_to "Register", register_path, :class => "button register-button" %></li>
         <%end%>
-        <li><%= link_to "Home", root_path, :class => "button"%></li>
       </ul>
     </nav>
 <%= yield %>
