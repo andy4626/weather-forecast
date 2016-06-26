@@ -1,2 +1,24 @@
-<h1 id="address"><%= @location.address%></h1>
-<div class="weather"></div>
+<h1>Current Weather details for: <div id="address"><%= @location.address%></div></h1>
+
+<table id="weather_forecast">
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>Current Temperature</th>
+			<th>Summary</th>
+			<th>Rain %</th>
+			<th>Humidity</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr id="forecast">
+		</tr>
+	</tbody>
+</table>
+</br>
+<hr>
+<div id="weather"></div>
+</br>
+<hr>
+<h3>Historic Weather Information</h3>
+

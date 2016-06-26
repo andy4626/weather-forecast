@@ -1,5 +1,8 @@
-<div>
+<fieldset>
+  <legend>Search History</legend>
 	<% @user.locations.each do |location|%>
-  	<h3><%= link_to location.address, user_location_path(current_user, location)%></h3>
+  	<p><%= link_to location.address, user_location_path(current_user, location)%></p>
   <% end %>
 </div>
+
+</fieldset>
