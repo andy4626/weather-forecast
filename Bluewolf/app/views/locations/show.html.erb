@@ -1,6 +1,5 @@
 <h1>Current Weather details for: <div id="address"><%= @location.address%></div></h1>
-
-<table id="weather_forecast">
+<table>
 	<thead>
 		<tr>
 			<th>Date</th>
@@ -20,5 +19,18 @@
 <div id="weather"></div>
 </br>
 <hr>
-<h3>Historic Weather Information</h3>
-
+<h3>Historic Weather Information(Last year)</h3>
+<table>
+	<thead>
+		<tr>
+			<th>Temperature</th>
+			<th>Summary</th>
+			<th>Rain %</th>
+			<th>Humidity</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr id="history-forecast">
+		</tr>
+	</tbody>
+</table>

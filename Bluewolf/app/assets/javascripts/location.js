@@ -59,6 +59,24 @@ function drawBasic() {
     })
 }
 
+function historyWeather(lat, lng){
+    var date = new Date().getTime();
+    var history =  Math.round((date-31556926)/1000).toString();
+    var history_request = $.ajax({
+      type: "GET",
+      url: "https://api.forecast.io/forecast/ef4dc6ca1e4cb43dbab92f2f5a815fda/"+ lat +"," +lng + ","+ history,
+      dataType: "jsonp"});
+    debugger;
+    history_request.done(function(response){
+      $('#history-forecast').append("<td>" +response.currently.temperature+" °F</td><td>" + response.currently.summary+"</td><td>"+response.currently.precipProbability*100+"%</td><td>"+response.currently.humidity +"</td>");
+    })
+    history_request.fail(function(response){
+      console.log(response)
+    })
+
+}
+
+
 $(document).ready(function() {
     var address = document.getElementById("address").innerHTML.replace(/ /g, "+")
 		var coordinates_request = $.ajax({
@@ -69,7 +87,8 @@ $(document).ready(function() {
     coordinates_request.done(function(response){
     	var location_lat = response.results[0].geometry.location.lat.toString();
 			var location_lng = response.results[0].geometry.location.lng.toString();
-      getWeatherForLocation(location_lat, location_lng)
+      getWeatherForLocation(location_lat, location_lng);
+      historyWeather(location_lat, location_lng);
     })
 
     coordinates_request.fail(function(response){
